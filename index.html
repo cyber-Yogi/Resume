@@ -3,250 +3,296 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Rohit Kumar — Checkpoint 1.2</title>
+<title>Rohit Kumar — Cybersecurity Professional</title>
 <link href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
 <style>
-  :root {
-    --bg: #121417;
-    --card: #1C1F24;
-    --cyan: #38BDF8;
-    --blue: #0EA5E9;
-    --gold: #FACC15;
-    --text: #F8FAFC;
-    --muted: #94A3B8;
-    --border: #334155;
+/* Styling the button to match your theme */
+.download-btn {
+  background: var(--cyan);
+  color: var(--bg);
+  border: none;
+  padding: 10px 20px;
+  font-family: 'Rajdhani', sans-serif;
+  font-weight: 700;
+  font-size: 14px;
+  letter-spacing: 2px;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: 0.3s;
+  margin-top: 15px;
+  box-shadow: 0 0 15px rgba(56, 189, 248, 0.3);
+}
+
+.download-btn:hover {
+  background: #fff;
+  box-shadow: 0 0 20px rgba(56, 189, 248, 0.6);
+}
+
+/* CRITICAL: Hides the button and footer during printing */
+@media print {
+  .download-btn, .footer {
+    display: none !important;
   }
+  body {
+    padding: 0;
+    margin: 0;
+    width: 100%;
+  }
+  .main {
+    width: 100%;
+  }
+}
+:root {
+  --bg: #121417;
+  --card: #1C1F24;
+  --cyan: #38BDF8;
+  --blue: #0EA5E9;
+  --gold: #FACC15;
+  --text: #F8FAFC;
+  --muted: #94A3B8;
+  --border: #334155;
+}
 
   * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { background: var(--bg); color: var(--text); font-family: 'Inter', sans-serif; width: 1150px; margin: 0 auto; line-height: 1.5; padding-bottom: 40px; }
 
-  /* --- PDF & PRINT LOGIC --- */
-  @media print {
-    .download-btn { display: none !important; }
-    body { 
-      background-color: var(--bg) !important; 
-      -webkit-print-color-adjust: exact; 
-      print-color-adjust: exact;
-    }
-    .resume-wrapper { border: none !important; } /* Removes outer border for clean PDF edges */
-  }
-
-  body { 
-    background: var(--bg); 
-    color: var(--text); 
-    font-family: 'Inter', sans-serif; 
-    line-height: 1.5; 
-    padding: 40px 0;
-  }
-
-  /* --- MAIN CONTAINER BORDER --- */
-  .resume-wrapper {
-    width: 1150px;
-    margin: 0 auto;
-    background: var(--bg);
-    border: 1px solid var(--border); /* Subtle outer border */
-    box-shadow: 0 0 30px rgba(0,0,0,0.5);
-  }
-
-  /* --- DOWNLOAD BUTTON --- */
-  .download-btn {
-    background: var(--cyan);
-    color: var(--bg);
-    border: none;
-    padding: 8px 15px;
-    font-family: 'Rajdhani', sans-serif;
-    font-weight: 700;
-    font-size: 12px;
-    letter-spacing: 1px;
-    border-radius: 4px;
-    cursor: pointer;
-    transition: 0.3s;
-    margin-top: 10px;
-    display: inline-flex;
-    align-items: center;
-    gap: 8px;
-  }
-  .download-btn:hover { background: #fff; transform: translateY(-2px); }
-
-  /* --- HEADER --- */
+  /* --- COMPACT HEADER (Space Reduced) --- */
   .header {
-    padding: 25px 50px;
+    padding: 20px 50px 10px; /* Reduced vertical padding */
     border-bottom: 2px solid var(--cyan);
     display: grid;
     grid-template-columns: 1fr auto;
     align-items: center;
     gap: 30px;
   }
-  .name { font-family: 'Rajdhani', sans-serif; font-size: 58px; font-weight: 700; color: #fff; letter-spacing: 2px; line-height: 1; }
+  .name { font-family: 'Rajdhani', sans-serif; font-size: 58px; font-weight: 700; color: #fff; letter-spacing: 2px; line-height: 1; margin-bottom: 2px; }
   .name span { color: var(--cyan); }
   .header-meta { font-family: 'Rajdhani', sans-serif; font-size: 13px; color: var(--cyan); letter-spacing: 3px; text-transform: uppercase; margin-top: 2px; display: block; }
-  .tagline { font-size: 13px; color: #FFFFFF; max-width: 650px; margin-top: 8px; font-weight: 300; }
+  .tagline { font-size: 13px; color: #FFFFFF; max-width: 650px; margin-top: 6px; font-weight: 300; line-height: 1.5; }
   
-  .contact-grid { display: grid; grid-template-columns: 1fr; gap: 6px; }
+  .contact-grid { display: grid; grid-template-columns: 1fr; gap: 4px; }
   .pill { background: rgba(0,200,224,0.05); border: 1px solid var(--border); padding: 4px 10px; font-size: 11px; border-radius: 4px; color: var(--text); }
   .pill b { color: var(--cyan); margin-right: 5px; }
 
   /* --- LAYOUT --- */
   .main { display: grid; grid-template-columns: 310px 1fr; }
-  .sidebar { background: rgba(28, 31, 36, 0.6); border-right: 1px solid var(--border); padding: 30px 20px; }
-  .content { padding: 35px 40px; }
+  .sidebar { background: rgba(13, 31, 51, 0.4); border-right: 1px solid var(--border); padding: 20px 20px; }
+  .content { padding: 20px 40px; }
 
-  .s-title { font-family: 'Rajdhani', sans-serif; font-size: 13px; font-weight: 700; color: var(--cyan); border-bottom: 1px solid var(--border); padding-bottom: 5px; margin-bottom: 12px; text-transform: uppercase; letter-spacing: 2px; }
-  .s-section { margin-bottom: 30px; }
-  .c-title { font-family: 'Rajdhani', sans-serif; font-size: 14px; font-weight: 700; color: var(--cyan); border-bottom: 1px solid var(--border); padding-bottom: 5px; margin-bottom: 20px; text-transform: uppercase; letter-spacing: 2px; }
+  /* --- SECTION TITLES (Space Reduced) --- */
+  .s-title { font-family: 'Rajdhani', sans-serif; font-size: 13px; font-weight: 700; color: var(--cyan); border-bottom: 1px solid var(--border); padding-bottom: 4px; margin-bottom: 8px; text-transform: uppercase; letter-spacing: 2px; }
+  .s-section { margin-bottom: 22px; }
+  .c-title { font-family: 'Rajdhani', sans-serif; font-size: 13px; font-weight: 700; color: var(--cyan); border-bottom: 1px solid var(--border); padding-bottom: 4px; margin-bottom: 15px; text-transform: uppercase; letter-spacing: 2px; }
 
   /* --- TAGS & SIDEBAR LISTS --- */
   .tags { display: flex; flex-wrap: wrap; gap: 5px; }
   .tag { background: var(--card); border: 1px solid var(--border); padding: 3px 7px; font-size: 10px; border-radius: 3px; color: #fff; }
 
-  .item-card { margin-bottom: 12px; padding-left: 10px; border-left: 2px solid var(--blue); }
+  .item-card { margin-bottom: 8px; padding-left: 10px; border-left: 2px solid var(--blue); }
   .item-card.edu { border-left-color: var(--gold); }
   .item-title { font-size: 11.5px; font-weight: 600; color: #fff; line-height: 1.3; }
   .item-sub { font-size: 10px; color: var(--muted); margin-top: 1px; }
 
-  /* --- EXPERIENCE --- */
-  .job { margin-bottom: 35px; }
-  .job-header { display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 3px; }
+  /* --- EXPERIENCE (Space Reduced) --- */
+  .job { margin-bottom: 24px; }
+  .job-header { display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 1px; }
   .job-title { font-family: 'Rajdhani', sans-serif; font-size: 19px; font-weight: 700; color: #fff; }
   .job-date { font-size: 10.5px; color: var(--gold); font-weight: 500; font-family: 'Rajdhani', sans-serif; letter-spacing: 1px; }
-  .company-line { display: flex; align-items: center; gap: 10px; margin-bottom: 12px; }
+  .company-line { display: flex; align-items: center; gap: 10px; margin-bottom: 6px; }
   .logo { width: 22px; height: 22px; object-fit: contain; filter: brightness(1.2); }
   .org { font-size: 13.5px; font-weight: 600; color: var(--cyan); }
 
   .bullets { list-style: none; }
-  .bullets li { font-size: 12.5px; color: #FFFFFF; margin-bottom: 8px; padding-left: 15px; position: relative; line-height: 1.6; }
+  .bullets li { font-size: 12.5px; color: #FFFFFF; margin-bottom: 5px; padding-left: 15px; position: relative; line-height: 1.5; }
   .bullets li::before { content: '•'; position: absolute; left: 0; color: var(--cyan); font-size: 16px; line-height: 1; }
   .bullets li strong { color: #fff; }
 
-  .award-box { display: flex; gap: 8px; margin-bottom: 12px; }
+  .award-box { display: flex; gap: 8px; margin-bottom: 8px; }
   .award-icon { font-size: 16px; }
   .award-info { font-size: 10.5px; color: var(--muted); }
   .award-info b { color: var(--gold); display: block; margin-bottom: 1px; }
 
-  .footer { text-align: center; padding: 25px; font-size: 10px; color: var(--muted); border-top: 1px solid var(--border); }
+  .footer { text-align: center; padding: 20px; font-size: 10px; color: var(--muted); border-top: 1px solid var(--border); }
 </style>
 </head>
 <body>
 
-<div class="resume-wrapper">
-  <div class="header">
-    <div>
-      <h1 class="name">ROHIT <span>KUMAR</span></h1>
-      <span class="header-meta">A Cybersecurity Professional · 15+ Years · British Citizen</span>
-      <p class="tagline">Security Professional with 15+ years driving incident response, threat hunting, and digital forensics across global, hybrid-cloud enterprises, delivering measurable reductions in MTTA/MTTR and ATT&CK-aligned detection coverage.</p>
-    </div>
-    <div class="contact-grid">
-      <div class="pill"><b>✉</b> Infosec.Rohitkumar@gmail.com</div>
-      <div class="pill"><b>📞</b> +44-7535049599</div>
-      <div class="pill"><b>🔗</b> linkedin.com/in/acyberyogi</div>
-      <button class="download-btn" onclick="window.print()"><span>📥</span> SAVE AS PDF</button>
-    </div>
+<div class="header">
+  <div>
+    <h1 class="name">ROHIT <span>KUMAR</span></h1>
+    <span class="header-meta">A Cybersecurity Professional · 15+ Years · British Citizen</span>
+    <p class="tagline">Security Professional with 15+ years driving incident response, threat hunting, and digital forensics across global, hybrid-cloud enterprises, delivering measurable reductions in MTTA/MTTR and ATT&CK-aligned detection coverage, with executive communication and post-incident improvement at scale.</p>
   </div>
-
-  <div class="main">
-    <div class="sidebar">
-      <div class="s-section">
-        <div class="s-title">Technical Arsenal</div>
-        <div class="tags">
-          <span class="tag">CrowdStrike</span> <span class="tag">Elastic/SIEM</span> <span class="tag">Splunk</span>
-          <span class="tag">Microsoft Purview</span> <span class="tag">DLP</span> <span class="tag">F5 ASM</span>
-          <span class="tag">ThreatConnect</span> <span class="tag">Intel471</span> <span class="tag">SOAR</span>
-          <span class="tag">Binary Ninja</span> <span class="tag">Malware Sandboxing</span> <span class="tag">Zenity Security</span>
-          <span class="tag">Autopsy</span> <span class="tag">Menlo Security</span> <span class="tag">getrealsecurity</span>
-          <span class="tag">Thinkst Canary</span> <span class="tag">safebreach</span> <span class="tag">Imperva WAF/DAM</span>
-        </div>
-      </div>
-
-      <div class="s-section">
-        <div class="s-title">Awards & Recognition</div>
-        <div class="award-box">
-          <span class="award-icon">🏅</span>
-          <div class="award-info"><b>Cloud Security Alliance</b>Contributor: Zero Trust module (CCZT)</div>
-        </div>
-        <div class="award-box">
-          <span class="award-icon">🏆</span>
-          <div class="award-info"><b>Visa Inc.</b>'Thinking Out of the Box' Award</div>
-        </div>
-        <div class="award-box">
-          <span class="award-icon">🌟</span>
-          <div class="award-info"><b>Visa Inc.</b>'Lead by Example' Award</div>
-        </div>
-      </div>
-
-      <div class="s-section">
-        <div class="s-title">Certifications</div>
-        <div class="tags">
-          <span class="tag">CCSK</span> <span class="tag">Security+</span> <span class="tag">Azure Security Eng</span>
-          <span class="tag">MS Defender for Cloud</span> <span class="tag">SANS AWS</span> <span class="tag">SpectorOps</span>
-          <span class="tag">Threat Hunting</span> <span class="tag">BlackHat UK</span> <span class="tag">OSINT Bootcamp</span>
-        </div>
-      </div>
-
-      <div class="s-section">
-        <div class="s-title">Education</div>
-        <div class="item-card edu"><div class="item-title">Certificate in AI for Cybersecurity</div><div class="item-sub">Johns Hopkins · 2025</div></div>
-        <div class="item-card edu"><div class="item-title">Advanced Malware Detection</div><div class="item-sub">Johns Hopkins · 2025</div></div>
-        <div class="item-card edu"><div class="item-title">Cybersecurity for Business Leaders</div><div class="item-sub">Oxford · 2022</div></div>
-        <div class="item-card edu"><div class="item-title">Leadership Edge</div><div class="item-sub">Harvard Business · 2022</div></div>
-        <div class="item-card edu"><div class="item-title">PG Diploma — Forensics</div><div class="item-sub">Singapore · 2014</div></div>
-        <div class="item-card edu"><div class="item-title">B.Tech (Engineering)</div><div class="item-sub">India · 2010</div></div>
-      </div>
-    </div>
-
-    <div class="content">
-      <div class="c-title">Professional Experience</div>
-
-      <div class="job">
-        <div class="job-header">
-          <h3 class="job-title">Cyber Specialist (SOC & Threat Hunt)</h3>
-          <span class="job-date">NOV 2023 – PRESENT</span>
-        </div>
-        <div class="company-line">
-          <img src="https://logo.clearbit.com/americanexpress.com" class="logo">
-          <span class="org">American Express UK - London, UK</span>
-        </div>
-        <ul class="bullets">
-          <li><strong>Advanced Threat Hunting:</strong> Lead monthly hypothesis-driven hunts mapped to MITRE ATT&CK, fusing EDR telemetry, CloudTrail, WAF/DAM, and OSINT.</li>
-          <li><strong>Detection Engineering:</strong> Automate enrichment and detection pipelines using SOAR and Elastic DSL; reduced analyst alert fatigue.</li>
-          <li><strong>Cyber M&A (Kabbage):</strong> Led security tooling integration across AWS and Azure infrastructures during M&A activity.</li>
-        </ul>
-      </div>
-
-      <div class="job">
-        <div class="job-header">
-          <h3 class="job-title">Fusion SOC / IR Lead</h3>
-          <span class="job-date">OCT 2020 – NOV 2023</span>
-        </div>
-        <div class="company-line">
-          <img src="https://logo.clearbit.com/americanexpress.com" class="logo">
-          <span class="org">American Express UK - London, UK</span>
-        </div>
-        <ul class="bullets">
-          <li><strong>P1 MTTR reduced by ~40%</strong> and true-positive detection rate raised by ~25% through rigorous ATT&CK-aligned engineering.</li>
-          <li><strong>P1 Incident Command:</strong> Coordinated cross-functional response (Legal, Comms, Cloud) during major incidents.</li>
-        </ul>
-      </div>
-
-      <div class="job">
-        <div class="job-header">
-          <h3 class="job-title">Senior Security Specialist</h3>
-          <span class="job-date">MAY 2015 – OCT 2020</span>
-        </div>
-        <div class="company-line">
-          <img src="https://logo.clearbit.com/visa.com" class="logo">
-          <span class="org">Visa Inc. - London & Singapore</span>
-        </div>
-        <ul class="bullets">
-          <li><strong>Infrastructure:</strong> Delivered WAF deployment across 250+ apps; led migration to Imperva DAM across 6,000+ servers.</li>
-          <li><strong>Cyber M&A (PayWorks):</strong> Led security integration of AWS environment during the PayWorks acquisition.</li>
-        </ul>
-      </div>
-    </div>
-  </div>
-
-  <div class="footer">
-    ROHIT KUMAR // Cybersecurity Leadership // Checkpoint 1.2
+  <div class="contact-grid">
+    <div class="pill"><b>✉</b> Infosec.Rohitkumar@gmail.com</div>
+    <div class="pill"><b>📞</b> +44-7535049599</div>
+    <div class="pill"><b>🔗</b> linkedin.com/in/acyberyogi</div>
   </div>
 </div>
 
-</body>
-</html>
+<div class="main">
+  <div class="sidebar">
+    <div class="s-section">
+      <div class="s-title">Technical Arsenal</div>
+      <div class="tags">
+        <span class="tag">CrowdStrike</span> 
+        <span class="tag">Elastic/SIEM</span> 
+        <span class="tag">Splunk</span>
+        <span class="tag">Microsoft Purview</span> 
+        <span class="tag">DLP</span> 
+        <span class="tag">F5 ASM</span>
+        <span class="tag">ThreatConnect</span> 
+        <span class="tag">Intel471</span> 
+        <span class="tag">SOAR</span>
+        <span class="tag">Binary Ninja</span>
+        <span class="tag">Malware Sandboxing</span> 
+        <span class="tag">Zenity Prompt Security</span> 
+        <span class="tag">Autopsy</span> 
+        <span class="tag">Menlo Security</span>
+        <span class="tag">getrealsecurity</span> 
+        <span class="tag">Thinkst Cyber Deception</span> 
+        <span class="tag">safebreach</span>
+        <span class="tag">Imperva WAF/DAM</span>
+      </div>
+    </div>
+
+    <div class="s-section">
+      <div class="s-title">Awards & Recognition</div>
+      <div class="award-box">
+        <span class="award-icon">🏅</span>
+        <div class="award-info"><b>Cloud Security Alliance</b>Contributor: Zero Trust module (CCZT)</div>
+      </div>
+      <div class="award-box">
+        <span class="award-icon">🏆</span>
+        <div class="award-info"><b>Visa Inc.</b>'Thinking Out of the Box' Award</div>
+      </div>
+      <div class="award-box">
+        <span class="award-icon">🌟</span>
+        <div class="award-info"><b>Visa Inc.</b>'Lead by Example' Award</div>
+      </div>
+    </div>
+
+    <div class="s-section">
+      <div class="s-title">Certifications</div>
+      <div class="tags">
+        <span class="tag">CCSK</span> <span class="tag">Security+</span> <span class="tag">Azure Security Eng</span>
+        <span class="tag">MS Defender for Cloud</span> <span class="tag">SANS AWS</span> <span class="tag">SpectorOps</span>
+        <span class="tag">Threat Hunting</span> <span class="tag">BlackHat UK</span> <span class="tag">OSINT Bootcamp</span>
+        <span class="tag">MacOS Forensics</span> <span class="tag">AZURE Pentest</span>
+      </div>
+    </div>
+
+    <div class="s-section">
+      <div class="s-title">Education</div>
+      <div class="item-card edu">
+        <div class="item-title">Certificate in AI for Cybersecurity</div>
+        <div class="item-sub">Johns Hopkins University · 2025</div>
+      </div>
+      <div class="item-card edu">
+        <div class="item-title">Advanced Malware & Network Anomaly Detection</div>
+        <div class="item-sub">Johns Hopkins University · 2025</div>
+      </div>
+      <div class="item-card edu">
+        <div class="item-title">Cybersecurity for Business Leaders</div>
+        <div class="item-sub">University of Oxford · 2022</div>
+      </div>
+      <div class="item-card edu">
+        <div class="item-title">Leadership Edge: Connect with Others</div>
+        <div class="item-sub">Harvard Business Publishing · 2022</div>
+      </div>
+      <div class="item-card edu">
+        <div class="item-title">PG Diploma — IT Security & Digital Forensics</div>
+        <div class="item-sub">Singapore · 2014</div>
+      </div>
+      <div class="item-card edu">
+        <div class="item-title">B.Tech (Engineering)</div>
+        <div class="item-sub">India · 2010</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="content">
+    <div class="c-title">Professional Experience</div>
+
+    <div class="job">
+      <div class="job-header">
+        <h3 class="job-title">Cyber Specialist (SOC & Threat Hunt)</h3>
+        <span class="job-date">NOV 2023 – PRESENT</span>
+      </div>
+      <div class="company-line">
+        <img src="https://logo.clearbit.com/americanexpress.com" class="logo">
+        <span class="org">American Express UK - London , UK</span>
+      </div>
+      <ul class="bullets">
+        <li><strong>Advanced Threat Hunting:</strong> Lead monthly hypothesis-driven hunts mapped to MITRE ATT&CK, fusing EDR telemetry (CrowdStrike/Tanium), CloudTrail/Defender, WAF/DAM, and OSINT to surface early-stage TTPs and insider anomalies — converting each hunt into high-fidelity SIEM/XDR detection rules.</li>
+        <li><strong>Detection Engineering:</strong> Automate enrichment, correlation, and detection pipelines using SOAR, Es QL and Elastic DSL; reduced analyst alert fatigue and accelerated triage velocity across the SOC.</li>
+        <li><strong>Emerging Threat Focus:</strong> Spearhead initiatives covering AI security & API security risks, low-code/no-code platform threats, and AI-driven attack vectors — keeping detection coverage ahead of the evolving threat landscape.</li>
+        <li><strong>Purple Team Collaboration:</strong> Embedded with red team and CTI on adversarial simulation exercises, validating detection efficacy and driving strategic technology adoption.</li>
+        <li><strong>Cyber M&A (Kabbage):</strong> Led security tooling integration across AWS and Azure infrastructures during M&A activity — reviewing cloud policies, rearchitecting alert pipelines, and building custom detection rules to maintain compliance and visibility.</li>
+      </ul>
+    </div>
+
+    <div class="job">
+      <div class="job-header">
+        <h3 class="job-title">Fusion SOC / IR Lead</h3>
+        <span class="job-date">OCT 2020 – NOV 2023</span>
+      </div>
+      <div class="company-line">
+        <img src="https://logo.clearbit.com/americanexpress.com" class="logo">
+        <span class="org">American Express UK - London , UK</span>
+      </div>
+      <ul class="bullets">
+        <li><strong>P1 MTTR reduced by ~40%</strong> and true-positive detection rate raised by ~25% through rigorous ATT&CK-aligned detection engineering and continuous process improvement.</li>
+        <li><strong>ATT&CK Coverage:</strong> Raised detection coverage across top ATT&CK techniques to 60%+ by hardening the web/endpoint stack — Imperva/Akamai, Falcon/Tanium, DLP (Purview/Symantec), Zimperium, and IDS/IPS.</li>
+        <li><strong>CTI Operationalisation:</strong> Curated actor TTPs and threat campaigns into sprint-ready hunt packages and detection rules each cycle, converting intelligence into measurable detection outcomes.</li>
+        <li><strong>P1 Incident Command:</strong> Coordinated cross-functional response (Legal, Comms, Cloud, App owners) during major incidents; delivered executive briefings and post-incident reviews that drove backlog remediation and policy changes across BUs.</li>
+      </ul>
+    </div>
+
+    <div class="job">
+      <div class="job-header">
+        <h3 class="job-title">Senior Security Specialist</h3>
+        <span class="job-date">MAY 2015 – OCT 2020</span>
+      </div>
+      <div class="company-line">
+        <img src="https://logo.clearbit.com/visa.com" class="logo">
+        <span class="org">Visa Inc. - London & Singapore</span>
+      </div>
+      <ul class="bullets">
+        <li><strong>Large-Scale Infrastructure Security:</strong> Delivered WAF deployment (Imperva and Akamai) across 250+ web applications; led migration from IBM Guardium to Imperva DAM across 6,000+ database servers.</li>
+        <li><strong>Threat Detection & IR:</strong> Directed high-priority incident response using MITRE ATT&CK to identify adversarial and insider-threat TTPs through DAM, SIEM, and enriched log sources.</li>
+        <li><strong>Cyber M&A (PayWorks):</strong> Led security integration of AWS environment during the PayWorks acquisition — rearchitected MSSP IR plan, rewrote playbooks, onboarded vendors, and built custom SIEM policies for the merged environment.</li>
+        <li><strong>Awards:</strong> Received 'Cybersecurity Thinking Out of the Box' and 'Lead by Example' awards from Visa Inc. for outstanding contribution to threat detection innovation and team leadership.</li>
+        <li>Managed cross-functional security projects across Legal, Engineering, and Compliance, integrating security practices into M&A and business transformation programmes.</li>
+      </ul>
+    </div>
+
+    <div class="job">
+      <div class="job-header">
+        <h3 class="job-title">Technical Security Consultant</h3>
+        <span class="job-date">MAY 2014 – MAY 2015</span>
+      </div>
+      <div class="company-line">
+        <img src="https://logo.clearbit.com/gulfit.ae" class="logo">
+        <span class="org">Gulf IT LLC - Dubai, UAE</span>
+      </div>
+      <ul class="bullets">
+        <li>Managed full pre- and post-sales security cycles across the Middle East for Imperva (WAF/DAM), Symantec, and McAfee portfolios — handling RFPs, PoCs, and demonstrations tailored to enterprise requirements.</li>
+      </ul>
+    </div>
+
+    <div class="job">
+      <div class="job-header">
+        <h3 class="job-title">Security Operations Specialist</h3>
+        <span class="job-date">NOV 2011 – MAR 2014</span>
+      </div>
+      <div class="company-line">
+        <img src="https://logo.clearbit.com/ibm.com" class="logo">
+        <span class="org">IBM India</span>
+      </div>
+      <ul class="bullets">
+        <li>Operated in a 24x7 Security Command Centre handling perimeter attacks, web exploits, and online fraud incidents; installed and maintained Nessus, Symantec AV, IDS/IPS, and honeypot infrastructure.</li>
+      </ul>
+    </div>
+  </div>
+</div>
