@@ -33,13 +33,17 @@
   transform: translateY(-1px);
 }
 
-/* CRITICAL: Hides the button and adjusts spacing during printing */
+/* CRITICAL: Hides browser headers/footers and controls print view */
+@page {
+  margin: 0; /* This strictly removes the browser-generated date, URL, and page numbers */
+}
+
 @media print {
-  .print-container, .download-btn, .footer {
+  .print-container, .footer {
     display: none !important;
   }
   body {
-    padding: 0;
+    padding: 15mm 0 !important; /* Adds safe spacing at the top and bottom of the printed page */
     margin: 0;
     width: 100%;
   }
